@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "X86 Emulator", "X86 Emulator.vcxproj", "{480D2E91-BE84-4D0D-A4C4-78F0CA8ABFE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EmulatorTest", "examples\EmulatorTest\EmulatorTest.vcxproj", "{C1F83850-A9E2-49A3-8C88-8B527BAFC40E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{480D2E91-BE84-4D0D-A4C4-78F0CA8ABFE0}.Debug|Win32.ActiveCfg = Release|Win32
+		{480D2E91-BE84-4D0D-A4C4-78F0CA8ABFE0}.Debug|Win32.Build.0 = Release|Win32
+		{480D2E91-BE84-4D0D-A4C4-78F0CA8ABFE0}.Release|Win32.ActiveCfg = Release|Win32
+		{480D2E91-BE84-4D0D-A4C4-78F0CA8ABFE0}.Release|Win32.Build.0 = Release|Win32
+		{C1F83850-A9E2-49A3-8C88-8B527BAFC40E}.Debug|Win32.ActiveCfg = Release|Win32
+		{C1F83850-A9E2-49A3-8C88-8B527BAFC40E}.Debug|Win32.Build.0 = Release|Win32
+		{C1F83850-A9E2-49A3-8C88-8B527BAFC40E}.Release|Win32.ActiveCfg = Release|Win32
+		{C1F83850-A9E2-49A3-8C88-8B527BAFC40E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
