@@ -62,8 +62,23 @@ string level0[4] = {
 DWORD AsmDebugger::parser(string s) {
     pages = 0;
     cur   = 0;
-    mem   = (DWORD) malloc(0x1000);
+    
+#ifdef WIN32
+	/*
+	 * Since this memory region is going to be executed directly with the CPU,
+	 * allocate it as an EXECUTABLE region since latest Windows versions wouldn't
+	 * allow to execute memory regions allocated with malloc, thus not flagged
+	 * as executable.
+	 */
+	unsigned char *p = (unsigned char *)VirtualAlloc( NULL, 0x1000, MEM_COMMIT, PAGE_EXECUTE_READWRITE );
+	ZeroMemory( p, 0x1000 );
+	
+	mem = (DWORD)p;
+#else
+	mem   = (DWORD) malloc(0x1000);
     memset((char *) mem, 0, 0x1000);
+#endif
+	
     pages++;
     s = to_lower_case(s);
     add_to_buffer(process->getsystem()->assembl("push esi"));
