@@ -247,17 +247,17 @@ struct image_base_relocation
 #define IMAGE_ORDINAL_FLAG 0x80000000
 struct image_export_directory
 {
-  unsigned long characteristics;
-  unsigned long timestamp;
-  unsigned short major_version;
-  unsigned short minor_version;
-  unsigned long name;
-  unsigned long base;
-  unsigned long number_of_functions;
-  unsigned long number_of_names;
-  unsigned long address_of_functions;      // RVA from base of image
-  unsigned long address_of_names;          // RVA from base of image
-  unsigned long address_of_name_ordinals;  // RVA from base of image
+  unsigned long characteristics;					//+00
+  unsigned long timestamp;								//+04
+  unsigned short major_version;						//+08
+  unsigned short minor_version;						//+0A
+  unsigned long name;											//+0C
+  unsigned long base;											//+10
+  unsigned long number_of_functions;			//+14
+  unsigned long number_of_names;					//+18
+  unsigned long address_of_functions;     //+1C // RVA from base of image
+  unsigned long address_of_names;         //+20 // RVA from base of image
+  unsigned long address_of_name_ordinals; //+24 // RVA from base of image
 };
 //
 // Import Format

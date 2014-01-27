@@ -224,6 +224,10 @@ DWORD PEDump(DWORD Eip, Process * c, char * filename) {
             sections[i].size_of_raw_data    = sections[i + 1].virtual_address - sections[i].virtual_address;
             sections[i].pointer_to_raw_data = sections[i].virtual_address;
             sections[i].characteristics    |= 0x80000000;
+			//Set The Section that includes Eip to Executable Readonly
+			if (Eip >= sections[i].virtual_address && Eip < (sections[i].virtual_address + sections[i].virtual_size))
+				sections[i].characteristics    = 0x60000020;
+
             // cout << "Section = "<< i << "\n";
             // cout << "Size = "<<(int*)PEHeader->sections[i].size_of_raw_data << "\n";
             // cout << "Pointer = "<< (int*)PEHeader->sections[i].pointer_to_raw_data << "\n";
